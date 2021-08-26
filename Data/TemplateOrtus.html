@@ -1,0 +1,386 @@
+﻿<!DOCTYPE html>
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <title>Operation</title>
+      <link rel="stylesheet" type="text/css" href="Css/loadParam.css">
+   </head>
+<body>
+   <div id='prefFieldZkDt_Cleaning' class="container">
+      <p class="center_gray">Cleaning recipe</p>
+         <div class="row">
+            <div class="col-6">
+               <h2>Operation parameters</h2>
+                 <label for="" class="own_label autoW">Time, s</label>
+               
+                                  <input id="prefFieldZkDt_rSetTime"><br>
+            
+               
+                            <label for="" class="own_label autoW">Substrate speed, rpm</label>
+               
+                      <input id="prefFieldZkDt_wSubstrateSpeed"><br>
+               
+                  <label for="" class="own_label autoW">Work pressure, Pa</label>
+               
+                  <input id="prefFieldZkDt_rWorkPressure"><br>
+                  <label for="" class="own_label autoW">Gas system recipe</label>
+                  <input id="prefFieldZkDt_wGasCmd" class="operation_label">
+               
+            </div>
+            <div class="col-5">
+               <h2>Assisting source</h2>
+               <label for="" class="own_label autoW">Anode voltage, A</label>
+               <input id="prefFieldZkDt_IS_rSetU"><br>
+               <label for="" class="own_label autoW">Anode current, A</label>
+               <input id="prefFieldZkDt_IS_rSetI1"><br>
+               <label for="" class="own_label autoW">Glow current, A</label>
+               <input id="prefFieldZkDt_IS_rSetI2"><br>
+
+            </div>
+         </div>
+      
+   </div>
+   <div id='prefFieldZkDt_Material'>
+      <!--'prefFieldZkDt_Material'>-->
+      <p class="center_gray">Material recipe</p>
+      <div class="container">
+         <div class="row">
+            <div class="col-6 borderGray_Block" >
+               <h2>Material parameters</h2>
+               <label for="prefFieldZkDt_Name" class="">Material name</label>
+               <input id="prefFieldZkDt_Name">
+               <br>
+               <label for="prefFieldZkDt_rZFactor" class="">Z-factor </label>
+               <input id="prefFieldZkDt_rZFactor">
+               <br>
+               <label for="prefFieldZkDt_rDensity" class="">Density</label>
+               <input id="prefFieldZkDt_rDensity">
+               <br>
+               <label for="prefFieldZkDt_rGFactor" class="">Geometrical factor</label>
+               <input id="prefFieldZkDt_rGFactor">
+               <hr>
+               <h2>Sputtering rate control</h2>
+               <label for="" class="">Speed maintaining</label>
+               <a href="#" id="prefFieldZkDt_xControl0">On</a>
+               <br>
+               <label for="prefFieldZkDt_rRate" class="">Sputtering rate, A/c </label>
+               <input id="prefFieldZkDt_rRate">
+               <br>
+               <h2>PID - regulator</h2>
+               <label for="" class="">P</label>
+               <input id="prefFieldZkDt_Control_rPID_Kp">
+               
+               <label for="" class="">I</label>
+               <input id="prefFieldZkDt_Control_rPID_Ti">
+              
+               <label for="" class="">D</label>
+               <input id="prefFieldZkDt_Control_rPID_Td">
+               
+            </div>
+            
+           <div class="col borderGray_Block">
+
+          
+               
+            <div class="devices">
+               <h2>Evaporator parameters</h2>
+             
+             <span>Device</span>
+             <a href="#" id="prefFieldZkDt_wDevice0">EBE</a>  
+             <a href="#" id="prefFieldZkDt_wDevice1">RE</a></br> 
+             <span>Dataset</span><span>Dataset (waiting mode)</span> <br>
+             <label for="" class=" ">EBE1</label>
+             <input id="prefFieldZkDt_Device1_sName_DataSet" class="h2">
+             <input id="prefFieldZkDt_Device1_sName_DataSetStandby" class="h2"><br>
+             <label for="" class=" ">EBE2</label>
+             <input id="prefFieldZkDt_Device2_sName_DataSet" class="h2">
+             <input id="prefFieldZkDt_Device2_sName_DataSetStandby" class="h2"><br>
+
+             </div>
+             
+             <hr>
+              <h2>Material warming up parameters</h2>
+              <table>
+                 <thead>
+                  <tr>
+                     <td>
+                     
+                     </td>
+                     <td>
+                        <span>Warm. up</span>
+                     </td>
+                     <td>
+                        <span>Work mode</span>
+                     </td>
+                     <td>
+                        <span>Sputt.</span>
+                     </td>
+                     <td>
+                        <span>Off</span>
+                     </td>
+                  </tr>
+                 </thead>
+                 <tbody>
+                     <tr>
+                        <td>
+                           <label for="prefFieldZkDt_Name" class="">Em. curr., mA</label><br>
+                           <label for="prefFieldZkDt_Name" class="">Prepar. time, s</label><br>
+                           <label for="prefFieldZkDt_Name" class="">Wait. time, s</label><br>
+                           <label for="" class="">Макс ток эм, мА</label><br>
+                           
+                        </td>
+                        <td>
+                           <input id="prefFieldZkDt_Ramp_rSet1">
+                           <input id="prefFieldZkDt_Ramp_rSpeedRamp1">
+                           <input id="prefFieldZkDt_Ramp_wTimeWait1">
+                           <input id="prefFieldZkDt_Control_rMax">
+                        </td>
+                        <td>
+                           <input id="prefFieldZkDt_Ramp_rSetWork">
+                           <input id="prefFieldZkDt_Ramp_rSpeedRampWork">
+                           <input id="prefFieldZkDt_Ramp_wTimeWaitWork">
+                           
+                        </td>
+                        <td>
+                           <input id="prefFieldZkDt_Ramp_rSetWorkStab">
+                           <input id="prefFieldZkDt_Ramp_rSpeedRampWorkStab">
+                          
+                        </td>
+                        <td>
+                           <input id="prefFieldZkDt_Ramp_rSetOff">
+                           <input id="prefFieldZkDt_Ramp_rSpeedOff">
+                           <input id="prefFieldZkDt_Ramp_wTimeWaitOff">
+                          
+                        </td>
+                     </tr>
+                 </tbody>
+              </table>
+           </div>
+         </div>
+
+      </div>
+   </div>
+   <div id='prefFieldZkDt_Layer' class="container">
+      <p class="center_gray">Layer recipe</p>
+         <div class="row">
+            <div class="col-6">
+               <h2>Operation parameters</h2>
+
+               
+                            <label for="" class=" ">Substrate speed, rpm</label>
+               
+                      <input id="prefFieldZkDt_wSubstrateSpeed"><br>
+               
+                  <label for="" class=" ">Work pressure, Pa</label>
+               
+                  <input id="prefFieldZkDt_rWorkPressure"><br>
+                  <label for="" class=" ">Material 1</label>
+                  <input id="prefFieldZkDt_Device1_sName_Material" class="operation_label"><br>
+                  <label for="" class=" ">Material 2</label>
+                  <input id="prefFieldZkDt_Device2_sName_Material" class="operation_label"><br>
+                  <label for="" class=" ">Assisting recipe</label>
+                  <input id="prefFieldZkDt_wID_Cleaning" class="operation_label">
+               
+            </div>
+            <div class="col-5">
+               <h2>Evaporator parameters</h2>
+               <span>Dataset</span><span>Dataset (waiting mode)</span> <br>
+               <label for="" class=" ">EBE1</label>
+               <input id="prefFieldZkDt_Device1_wID_DataSet" class="operation_label">
+               <input id="prefFieldZkDt_Device1_wID_DataSetStandby" class="operation_label"><br>
+               <label for="" class=" ">EBE2</label>
+               <input id="prefFieldZkDt_Device2_wID_DataSet" class="operation_label">
+               <input id="prefFieldZkDt_Device2_wID_DataSetStandby" class="operation_label"><br>
+
+            </div>
+         </div>
+      
+   </div>
+   <div id='prefFieldZkDt_GasSystem'>
+      <p class="center_gray">Gas system recipe <input type="text" id="prefFieldZkDt_ID"></p>
+      <div class="container">
+         <div class="row">
+
+            <div class="col-3" style="border:1px solid darkgray;">
+               <h2 >GMFC1(Ox)</h2>            
+               <label for="">Use</label><a href="#" id="prefFieldZkDt_xGas1_Use0">On</a></br>  <br>
+               <a href="#" id="prefFieldZkDt_wGas1_wMode0">Flow</a></br> 
+               <label>
+                                 Feedback 
+               </label><a href="#" id="prefFieldZkDt_wGas1_wMode1">Pressure</a></br>  
+
+               <a href="#" id="prefFieldZkDt_wGas1_wMode2">Current</a></br>                                              
+
+               <label for="" class="  ">
+                  Flow, sccm</label><input id="prefFieldZkDt_rGas1_rSetNom"><br>
+               <label for="" class="  ">
+                  Setpoint</label>
+               <input id="prefFieldZkDt_rGas1_rSetPoint">
+               <br>
+            <label for="" class="  ">
+               P</label>
+            <input id="prefFieldZkDt_rGas1_PID_Kp"><br>
+            <label for="" class="  ">
+               I</label>
+            <input id="prefFieldZkDt_rGas1_PID_Ti">
+        
+         </div>
+         <div class="col-3" style="border:1px solid darkgray;">
+            <h2 >GMFC2(Ar)</h2>            
+            <label for="">Use</label>
+            <a href="#" id="prefFieldZkDt_xGas2_Use0">On</a></br>  <br>
+            <a href="#" id="prefFieldZkDt_wGas2_wMode0">Flow</a></br> 
+            <label>
+                              Feedback 
+            </label><a href="#" id="prefFieldZkDt_wGas2_wMode1">Pressure</a></br>  
+
+            <a href="#" id="prefFieldZkDt_wGas2_wMode2">Ток</a></br>                                              
+
+            <label for="" class="  ">
+               Flow, sccm</label><input id="prefFieldZkDt_rGas2_rSetNom"><br>
+            <label for="" class="  ">
+               Setpoint</label>
+            <input id="prefFieldZkDt_rGas2_rSetPoint"><br>
+            <label for="" class="  ">
+               P</label>
+            <input id="prefFieldZkDt_rGas2_PID_Kp"><br>
+            <label for="" class="  ">
+               I</label>
+            <input id="prefFieldZkDt_rGas2_PID_Ti">
+      </div>
+      <div class="col-3" style="border:1px solid darkgray;">
+         <h2 >GMFC3(Ar)</h2>            
+         <label for="">Use</label>
+         <a href="#" id="prefFieldZkDt_xGas3_Use0">On</a></br> <br> 
+         <a href="#" id="prefFieldZkDt_wGas3_wMode0">Flow</a></br> 
+         <label>
+                           Feedback 
+         </label><a href="#" id="prefFieldZkDt_wGas3_wMode1">Pressure</a></br>  
+
+         <a href="#" id="prefFieldZkDt_wGas3_wMode2">Current</a></br>                                              
+
+         <label for="" class="  ">
+            Flow, sccm</label><input id="prefFieldZkDt_rGas3_rSetNom"><br>
+         <label for="" class="  ">
+            Setpoint</label>
+         <input id="prefFieldZkDt_rGas3_rSetPoint"><br>
+         <label for="" class="  ">
+            P</label>
+         <input id="prefFieldZkDt_rGas3_PID_Kp"><br>
+         <label for="" class="  ">
+            I</label>
+         <input id="prefFieldZkDt_rGas3_PID_Ti">
+  
+   </div>
+         </div>
+         
+      </div>
+   </div>
+   <div id='prefFieldZkDt_Heating'>
+      <p class="center_gray">Heating recipe</p>
+      <div class="container">
+         <div class="row" style="width:100%">
+            <div class="col container center">
+               <div class="row row-flex justify-content-around" style="width:100%">
+                  <div class="col">
+                     <div class="table">
+                        <div>  <label for="prefFieldZkDt_wTime" class="own_label autoW">Time,s </label>
+                        </div>
+                        <div>                   <input id="prefFieldZkDt_rSetTime"><br>
+                        </div>
+                        <div>             <label for="" class="own_label autoW">Substrateholder speed, rpm</label>
+                        </div>
+                        <div>       <input id="prefFieldZkDt_wSubstrateSpeed">
+                        </div>
+                        <div>   <label for="" class="own_label autoW">Work pressure, Pa</label>
+                        </div>
+                        <div>   <input id="prefFieldZkDt_rWorkPressure"><br>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="w-100"></div>
+                  <div class="col container center row">
+                     <div class="col-11 row" style="border:1px solid darkgray">
+                        <h2>Heating parameters</h2>
+                        <label for="" class="own_label">Work mode</label>
+                        <a href="#" id="prefFieldZkDt_wHeatingMode0">Temperature</a>
+                        <a href="#" id="prefFieldZkDt_wHeatingMode1">Power</a>
+                        <div class="w-100"></div>
+                        <div class="col-6" style="text-align: right;">
+                           <label for="" class="own_label">Temperature, °C</label>
+                           <input id="prefFieldZkDt_rSetTemp" class="operation_label"><br>   
+                           <label for="" class="own_label">Heating rate, °C/min</label>
+                           <input id="prefFieldZkDt_rSetRate" class="operation_label"><br>   
+                           <label for="" class="own_label">Set power, %</label>
+                           <input id="prefFieldZkDt_rPower" class="operation_label"><br>   
+                           <label for="" class="own_label">Max power, %</label>
+                           <input id="prefFieldZkDt_rSetMaxPower" class="operation_label"><br> 
+                           <label for="" class="own_label">Hysteresis (-), °C</label>
+                           <input id="prefFieldZkDt_wTempGistMinus" class="operation_label"><br>   
+                           <label for="" class="own_label">Hysteresis (+), °C</label>
+                           <input id="prefFieldZkDt_wTempGistPlus" class="operation_label"><br>   
+                        </div>
+                        <div class="col-5" style="text-align: right;">
+                           <h2>PID - regulator</h2>
+                           <div class="" style="text-align: right;">
+                              <label for="" class="own_label">P</label>
+                              <input id="prefFieldZkDt_rSetPID_Kp" class="operation_label"><br>   
+                              <label for="" class="own_label">I</label>
+                              <input id="prefFieldZkDt_rSetPID_Ti" class="operation_label"><br>        
+                              <label for="" class="own_label">D</label>
+                              <input id="prefFieldZkDt_rSetPID_Td" class="operation_label"><br>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="dataset" id="prefFieldZkDt_DataSet">
+      <div class="container">
+         <h2>Dataset recipe</h2>
+        <div class="row">
+          <div class="col-4">
+           <label for="">Position, %</label><br>
+           <label for="">Amplitude, %</label><br>
+           <label for="">Freqiency, Гц</label><br>
+           <label for="">Wave form</label><br>
+           <label for="">Template</label><br>
+           <label for="">Тигель</label><br>
+           <label for="">Voltage, V</label><br>
+           <label for="">Glow currenr, А</label><br>
+           <label for="">Emission current, mА</label><br>
+           <label for="">DS voltage, V</label><br>
+           <label for="">Max emission current, mА</label>
+         </div>
+         <div class="col">
+           <input type="text" value="X"><input type="text" value="Y"><br>
+           <input id="prefFieldZkDt_wXPosition" type="text"><input id="prefFieldZkDt_wYPosition" type="text"><br>
+           <input id="prefFieldZkDt_wXAmplitude" type="text"><input id="prefFieldZkDt_wYAmplitude" type="text"><br>
+           <input id="prefFieldZkDt_rXFrequency" type="text"><input id="prefFieldZkDt_rYFrequency" type="text"><br>
+           <input id="prefFieldZkDt_wXWaveform" type="text"><input id="prefFieldZkDt_wYWaveform" type="text"><br>
+           <input id="prefFieldZkDt_wSweepMode" type="text"><br>
+           <input id="prefFieldZkDt_wSpiralSort" type="text"><br>
+           <input id="prefFieldZkDt_wVoltage" type="text"><br>
+           <input id="prefFieldZkDt_" type="text"><br>
+           <input id="prefFieldZkDt_" type="text"><br>
+           <input id="prefFieldZkDt_" type="text"><br>
+           <input id="prefFieldZkDt_wMaxCurrent" type="text"><br>    
+         </div>
+         <div class="col">
+           <h3>Locks</h3>
+           <label for="">Magnet</label><span id="prefFieldZkDt_"  class="circle"></span><br>
+           <label for="">VPC</label><span id="prefFieldZkDt_"  class="circle"></span><br>
+           <label for="">Water</label><span id="prefFieldZkDt_"  class="circle"></span><br>
+           <label for="">Vacuum</label><span id="prefFieldZkDt_"  class="circle"></span><br>
+           <label for="">Other</label><span id="prefFieldZkDt_"  class="circle"></span><br>
+         </div>
+   
+       </div>
+       
+      </div>
+    </div>
+</body>
+</html>

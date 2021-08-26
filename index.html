@@ -1,0 +1,227 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8">
+    <title>Список</title>
+
+    <script src="Scripts\\jquery-1.7.1.js" type="text/javascript"></script>
+    <script type="text/javascript" src="Data\\Items.js"></script>
+    <script type="text/javascript" src="Scripts\\Report.js"></script>
+    <script type="text/javascript" src="Scripts\\style.js"></script>
+
+    <!-- <script src="http://d3js.org/d3.v3.min.js"></script>-->
+    <!--  <script src="Scripts\\Chart.js"></script>   -->
+
+    <!--SIGNALR-->
+    <!--   <script type="text/javascript" src="Scripts\\jquery.signalR-2.4.0.min.js"></script>
+    <script type="text/javascript" src="Scripts\\jquery.signalR-2.4.0.js"></script>
+    <script src="http://DESKTOP-V3RHJ99:9000/signalr/hubs"></script>-->
+    <!--SIGNALR
+
+  http://19RIFP03:9000/signalr/hubs http://17rvni21:7000/signalr/hubs         18rrniis08:9000-->
+
+    <link rel="stylesheet" href="Css\\bootstrap\\grid.min.css" type="text/css" />
+    <link rel="stylesheet" href="Css\\style.css" type="text/css" />
+    <!--  <script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+  -->
+    <script src="Scripts/d3.v4.min.js" charset="utf-8"></script>
+</head>
+
+<body>
+    <div class="header">
+
+        <a href="#" id="sett"><img src="Css/Images/settings.png" style="float:right;margin-right:2px;"> </a>
+        <a href="#" id="fi"><img src="Css/Images/filter.png" style="float:right;margin:30px -20px auto -20px;"> </a>
+        <a href="#" id="export"><img src="Css/images/e.jpg" style="float:right;margin:54px -23px auto -20px;width:24px">
+        </a>
+
+
+        <div id="line0" class="container">
+
+            <div class="row">
+
+                <div id="img" class="col-1">
+
+                    <!--<img src="Css/Images/IZOVAC LOGO_w.png">-->
+                    <div id="DataProcess" style="display: none;"></div>
+                    <div id="DataReport" style="display: none;"></div>
+                    <div id="date_div" style="color:white;">
+                    </div>
+                    <div id="time_div" style="color:white;">
+                    </div>
+
+                    <p id="CurrentEquipment" class="nm"></p>
+                </div>
+
+
+                <div class="col">
+                    <div id="line" class="container">
+                        <div class="row" style="width: 100%">
+
+                            <div class="col-3 row">
+
+                                <div class="col">
+                                    <label for="EquipmentStatus" class="own_label center auto">Equipment state</label>
+                                </div>
+                                <div class="w-100"></div>
+                                <div class="col">
+                                    <input id="EquipmentStatus" class="state">
+                                </div>
+
+                            </div>
+                            <div class="col-2">
+                                <div class="col">
+                                    <label for="rChamberPressure" class="own_label center auto">Pressure</label>
+                                </div>
+                                <div class="w-100"></div>
+                                <div class="col">
+                                    <input id="rChamberPressure" class="nm">
+                                </div>
+                            </div>
+
+                            <div class="col row">
+
+                                <div class="col-3">
+                                    <label class="own_label center   auto">Recipe name</label>
+                                </div>
+                                <div class="col">
+                                    <label class="own_label center">State</label>
+                                </div>
+                                <div class="col-2">
+                                    <label class="own_label center">Time</label>
+                                </div>
+
+                                <div class="w-100"></div>
+
+                                <div class="col-3">
+                                    <input id="Process_sName" class="nm">
+                                </div>
+                                <div class="col">
+                                    <input id="Process_iState" class="state">
+                                </div>
+                                <div class="col-2">
+                                    <input id="Process_sTime" class="time">
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <p style='display:none' id='CurrentReportName'></p>
+        <p style='display:none' id='CurrentOperation'></p>
+        <input type="checkbox" id="nav-toggle" hidden>
+
+    </div>
+
+    <main>
+        <div id='prefFieldZkDt_Cleaning' class="container">
+            <p class="center_gray">Cleaning recipe</p>
+            <hr>
+            <span>Choose recipe </span>
+            <select>
+                <option value=""> - </option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+            </select>
+
+
+            <a href="#" id="">Save</a>
+            <a href="#" id="">Delete</a>
+            <hr>
+            <div class="row">
+                <div class="col-6">
+                    <h2>Operation parameters</h2>
+                    <label for="" class="own_label autoW">Time, s</label>
+
+                    <input id="prefFieldZkDt_rSetTime"><br>
+
+
+                    <label for="" class="own_label autoW">Substrate speed, rpm</label>
+
+                    <input id="prefFieldZkDt_wSubstrateSpeed"><br>
+
+                    <label for="" class="own_label autoW">Work pressure, Pa</label>
+
+                    <input id="prefFieldZkDt_rWorkPressure"><br>
+                    <label for="" class="own_label autoW">Gas system recipe</label>
+                    <input id="prefFieldZkDt_wGasCmd" class="operation_label">
+                    <br>
+                    <br>
+                </div>
+                <div class="col-5">
+                    <h2>Assisting source</h2>
+                    <label for="" class="own_label autoW">Anode voltage, A</label>
+                    <input id="prefFieldZkDt_IS_rSetU"><br>
+                    <label for="" class="own_label autoW">Anode current, A</label>
+                    <input id="prefFieldZkDt_IS_rSetI1"><br>
+                    <label for="" class="own_label autoW">Glow current, A</label>
+                    <input id="prefFieldZkDt_IS_rSetI2"><br>
+                    <br>
+                </div>
+            </div>
+
+        </div>
+
+
+    </main>
+
+</body>
+<footer>
+    <div id="reportEquipmentDataTable" class="features-table" style="visibility:hidden; ">
+
+        <div id='eQuipmentTBody'>
+
+        </div>
+    </div>
+
+    <div id="filter2">
+
+        <div style="display:inline-block; vertical-align: top;">
+            <span><input type="text" id="filter_abc" placeholder="Поиск"></span> by :
+
+            <select id="col_ol">
+                <option value="sOperator">Operator name</option>
+                <option value="Date">Date</option>
+                <option value="RecipeName">Recipe name</option>
+                <option value="ReportName">Report name</option>
+                <option value="ID">ID</option>
+            </select>
+        </div>
+        <div class="filterButtons">
+            <input type="radio" value="inc" name="sort"> Incr.
+            <input type="radio" value="desc" name="sort"> Decr.
+            <input type="radio" value="no" name="sort" checked> No
+            <select id="col_sort">
+                <option value="sOperator">Operator name</option>
+                <option value="Date">Date</option>
+                <option value="RecipeName">Recipe name</option>
+                <option value="ReportName">Report name</option>
+                <option value="ID">ID</option>
+            </select>
+
+        </div>
+        <button id="filter_ok">Ok</button>
+        <button id="reset_filter">Reset</button>
+
+        <div class="chooseRecipeTableView">
+            Report view
+            <input type="radio" value="table" name="recipeTableView" checked> Table
+            <input type="radio" value="trend" name="recipeTableView"> Chart
+        </div>
+        <div id="items" class="row">
+
+        </div>
+    </div>
+
+</footer>
+
+</html>
